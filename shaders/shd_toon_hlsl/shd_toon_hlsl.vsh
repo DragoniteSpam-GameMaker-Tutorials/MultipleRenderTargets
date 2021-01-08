@@ -12,6 +12,8 @@ struct VSOutput {
     
     float3 worldPos: POSITION;
     float3 worldNorm: NORMAL;
+    
+    float depth: DEPTH;
 };
 
 VSOutput main(VSInput input) {
@@ -23,6 +25,8 @@ VSOutput main(VSInput input) {
     
     output.worldPos = (mul(gm_Matrices[MATRIX_WORLD], float4(input.pos, 1.))).xyz;
     output.worldNorm = (mul(gm_Matrices[MATRIX_WORLD], normalize(float4(input.norm, 0.)))).xyz;
+    
+    output.depth = length(mul(gm_Matrices[MATRIX_WORLD_VIEW], float4(input.pos, 1.)).xyz);
     
     return output;
 }

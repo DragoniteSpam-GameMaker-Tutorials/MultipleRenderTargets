@@ -1,6 +1,10 @@
 /// @description draw the user interface
 
-draw_surface(application_surface, 0, 0);
+if (keyboard_check(vk_space)) {
+    draw_surface(surface_extra, 0, 0);
+} else {
+    draw_surface(application_surface, 0, 0);
+}
 
 draw_set_font(fnt_game);
 draw_text(32, 32, "Hello, my name is Ezekiel");

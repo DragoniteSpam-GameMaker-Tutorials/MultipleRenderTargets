@@ -1,5 +1,9 @@
 /// @description Draw the 3D world
 
+surface_set_target(surface_extra);
+draw_clear(c_black);
+surface_reset_target();
+
 draw_clear(c_black);
 
 shader_set(shd_basic_3d_stuff);
