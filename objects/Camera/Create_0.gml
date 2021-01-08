@@ -66,3 +66,7 @@ vb_link = load_model("link.d3d");
 link_rotation = 0;
 
 time = 0;
+
+surface_extra = surface_create(surface_get_width(application_surface), surface_get_height(application_surface));
+
+application_surface_draw_enable(false);

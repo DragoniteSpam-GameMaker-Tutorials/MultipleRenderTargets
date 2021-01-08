@@ -1,4 +1,5 @@
 /// @description Draw the 3D world
+
 draw_clear(c_black);
 
 shader_set(shd_basic_3d_stuff);
@@ -51,8 +52,9 @@ if (keyboard_check(ord("Q"))) {
     link_rotation -= 2;
 }
 
+surface_set_target_ext(1, surface_extra);
+
 matrix_set(matrix_world, matrix_build(250, 250, 0, 0, 0, link_rotation, 1, 1, 1));
 vertex_submit(vb_link, pr_trianglelist, sprite_get_texture(spr_link, 0));
 matrix_set(matrix_world, matrix_build_identity());
-
 shader_reset();

@@ -34,5 +34,6 @@ void main() {
     vec4 final_color = starting_color *
         vec4(min(lightAmbient + lightColor * att * NdotL_ramp,
         vec4(1.)).rgb, starting_color.a);
-    gl_FragColor = final_color;
+    gl_FragData[0] = final_color;
+    //gl_FragData[1] = vec4(1., 0., 0., 1.);
 }
